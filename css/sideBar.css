@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+.sideBar{
+	border: 1px solid gray;
+	width: 30%;
+	height: 85%;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	margin: 0px 0px 0px 0px;	
+}
