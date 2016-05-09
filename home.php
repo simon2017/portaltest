@@ -11,12 +11,7 @@ include 'topBar.php';
 include 'sideBar.php';
 include 'main.php';
 
-include 'data/util/dbconnector/DBHandler.php';
 
-$dbConnector= new DBHandler("simon","simon", "test", "localhost", 3306);
-
-if ( $dbConnector == null) echo "Error en conexion";
-else echo "conexion exitosa";
 ?>
 </body>
 </html>

@@ -6,6 +6,7 @@ Class DBHandler{
 	private $dbAlias;
 	private $dbHost;
 	private $dbPort;
+	private $mysqli;
 	
 	function __construct($dbUser,$dbPsswd,$dbAlias,$dbHost,$dbPort){
 		$this->dbAlias=$dbAlias;
@@ -15,18 +16,24 @@ Class DBHandler{
 		$this->dbPort=$dbPort;
 	}
 	
-	function connect(){
+	private function connect(){
 		
-		$mysqli = new mysqli($this->dbHost, $this->dbUser,$this->dbPsswd, $this->dbAlias);
+		$this->mysqli = new \mysqli($this->dbHost, $this->dbUser,$this->dbPsswd, $this->dbAlias);
 		
 		// ¡Oh, no! Existe un error 'connect_errno', fallando así el intento de conexión
-		if ($mysqli->connect_errno) {
-			return null;
+		if ($this->mysqli->connect_errno) {
+			echo("Connect failed: ". $this->mysqli->connect_error);
+			$this->mysqli= null;
 		}
-		else 
-			return $mysqli;
 	}
 	
+	public function getConnection(){
+		if($this->mysqli==null){
+			$this->connect();
+		}
+		
+		return $this->mysqli;
+	}
 	
 }
 ?>
