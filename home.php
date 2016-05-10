@@ -15,6 +15,7 @@ include 'util/SessionUtil.php';
 include 'util/Utilities.php';
 
 if(validateSession()==false){
+	echo "invalid session";
 	redirect("login.php",false);
 }
 

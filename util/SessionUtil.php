@@ -25,5 +25,17 @@ function validateSession() {
 	else
 		return false;
 }
+/**
+ * Calls session_destroy and then unset all variables from $_Session object.
+ *
+ * Note method handle session_start if it haven't called yet.
+ */
+function destroySession() {
+	if (is_session_started () == false) {
+		session_start ();
+	}
+	session_destroy ();
+	$_SESSION = array ();
+}
 
 ?>

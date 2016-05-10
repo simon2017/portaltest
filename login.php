@@ -8,8 +8,8 @@ include 'util/Utilities.php';
 $MAIN_REDIRECT = "home.php";
 
 // comienza codigo
-if (is_session_started ()==true)
-	session_destroy ();
+//destruyo session actual
+destroySession();
 
 $user = getPost ( "user" );
 $password = getPost ( "password" );
