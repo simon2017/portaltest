@@ -1,6 +1,6 @@
 <?php
-Class DBHandler{
-	
+Class DBConnector{
+		
 	private $dbUser;
 	private $dbPsswd;
 	private $dbAlias;

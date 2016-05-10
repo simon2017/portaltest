@@ -11,6 +11,12 @@ include 'topBar.php';
 include 'sideBar.php';
 include 'main.php';
 
+include 'util/SessionUtil.php';
+include 'util/Utilities.php';
+
+if(validateSession()==false){
+	redirect("login.php",false);
+}
 
 ?>
 </body>
